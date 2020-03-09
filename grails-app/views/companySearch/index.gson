@@ -1,0 +1,12 @@
+import company.Company
+
+model {
+	Iterable<Company> companyList
+	Long companyCount
+   }
+
+
+json {
+company tmpl.company(companyList ?: [])
+count companyCount
+}

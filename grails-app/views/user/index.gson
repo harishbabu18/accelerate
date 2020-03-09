@@ -1,8 +1,0 @@
-import usermanagement.user
-
-model {
-	Iterable<User> userList
-}
-
-json tmpl.user(userList ?: [])
-

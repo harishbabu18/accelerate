@@ -1,7 +1,0 @@
-import usermanagement.role
-
-model {
-	Role role
-}
-
-json tmpl.role(role)

@@ -1,7 +1,0 @@
-import usermanagement.role
-
-model {
-	Role role
-}
-
-json g.render(role, [resolveTemplate: false])

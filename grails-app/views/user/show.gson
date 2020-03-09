@@ -1,7 +1,0 @@
-import usermanagement.user
-
-model {
-	User user
-}
-
-json tmpl.user(user)

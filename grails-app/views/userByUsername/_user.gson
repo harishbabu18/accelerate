@@ -1,7 +1,0 @@
-import usermanagement.User
-
-model {
-	User user
-}
-
-json g.render(user, [resolveTemplate: false])

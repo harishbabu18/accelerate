@@ -71,7 +71,7 @@ grails:
         encoding: UTF-8
 ---
 server:
-  port: 8181
+  port: 8080
 ---
 grails:
     cors:

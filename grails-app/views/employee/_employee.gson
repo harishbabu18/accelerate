@@ -11,9 +11,9 @@ json {
   lastName  employee.lastName
   email employee.email
   dob employee.dob
-  user employee.user
   joiningdate employee.joiningdate
   relievingdate employee.relievingdate
+  user employee.user.username
   dateCreated employee.dateCreated
   lastUpdated employee.lastUpdated
 }

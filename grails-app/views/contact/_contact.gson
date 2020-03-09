@@ -19,6 +19,7 @@ json {
   country contact.country
   state contact.state
   zip contact.zip
+  user contact.user.username
   dateCreated contact.dateCreated
   lastUpdated contact.lastUpdated
 }

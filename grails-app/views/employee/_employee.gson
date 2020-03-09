@@ -4,4 +4,16 @@ model {
 	Employee employee
 }
 
-json g.render(employee, [resolveTemplate: false])
+json {
+  id employee.id
+  avatar employee.avatar
+  firstName employee.firstName
+  lastName  employee.lastName
+  email employee.email
+  dob employee.dob
+  user employee.user
+  joiningdate employee.joiningdate
+  relievingdate employee.relievingdate
+  dateCreated employee.dateCreated
+  lastUpdated employee.lastUpdated
+}

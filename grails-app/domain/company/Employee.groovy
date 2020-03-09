@@ -11,7 +11,7 @@ class Employee {
     String email
     Date dob
     User user
-    Date joinindate
+    Date joiningdate
     Date relievingdate
     Date dateCreated
     Date lastUpdated

@@ -2,6 +2,7 @@ package accelerate
 
 import company.OfficeType
 import company.Position
+import company.Supplierstatus
 import usermanagement.Role
 import usermanagement.User
 import usermanagement.UserRole
@@ -32,6 +33,11 @@ class BootStrap {
         new OfficeType(name: "WARE HOUSE").save()
         new OfficeType(name: "HEAD QUATERS").save()
         new OfficeType(name: "OTHERS").save()
+
+        new Supplierstatus(name: "Qualified",user: qualificaadmin).save()
+        new Supplierstatus(name: "Unqualified",user: qualificaadmin).save()
+        new Supplierstatus(name: "Reserved",user: qualificaadmin).save()
+
 
 
     }

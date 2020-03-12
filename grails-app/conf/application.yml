@@ -74,6 +74,24 @@ server:
   port: 8080
 ---
 grails:
+    controllers:
+        upload:
+            maxFileSize: 26214400
+            maxRequestSize: 26214400
+---
+grails:
+    plugin:
+        awssdk:
+            accessKey: AKIA457PGOYGG7TZLYAV
+            secretKey: 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
+            region: ap-south-1
+            s3:
+                accessKey: AKIA457PGOYGG7TZLYAV
+                secretKey: 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
+                region: ap-south-1
+                bucket: in.teraret.com
+---
+grails:
     cors:
         enabled: true
 ---

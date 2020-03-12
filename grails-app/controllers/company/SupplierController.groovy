@@ -1,6 +1,5 @@
 package company
 
-import grails.plugin.awssdk.s3.AmazonS3Service
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.CREATED
 import static org.springframework.http.HttpStatus.NOT_FOUND
@@ -12,74 +11,64 @@ import grails.gorm.transactions.ReadOnly
 import grails.gorm.transactions.Transactional
 
 @ReadOnly
-class CompanyController {
+class SupplierController {
 
-    CompanyService companyService
-    AmazonS3Service amazonS3Service
+    SupplierService supplierService
 
     static responseFormats = ['json', 'xml']
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond companyService.list(params), model:[companyCount: companyService.count()]
+        respond supplierService.list(params), model:[supplierCount: supplierService.count()]
     }
 
     def show(Long id) {
-        respond companyService.get(id)
+        respond supplierService.get(id)
     }
 
     @Transactional
-    def save(Company company) {
-
-
-        def mydate = new Date(System.currentTimeMillis())
-
-        if (company == null) {
+    def save(Supplier supplier) {
+        if (supplier == null) {
             render status: NOT_FOUND
             return
         }
-        if (company.hasErrors()) {
+        if (supplier.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond company.errors
+            respond supplier.errors
             return
         }
 
         try {
-            if(params.featuredImageFile!=null){
-            String path = "company/"+params.email+params.featuredImageFile.originalFilename
-            amazonS3Service.storeMultipartFile(path,params.featuredImageFile)
-            company.avatar =path
-            }
-            companyService.save(company)
+            supplierService.save(supplier)
         } catch (ValidationException e) {
-            respond company.errors
+            respond supplier.errors
             return
         }
 
-        respond company, [status: CREATED, view:"show"]
+        respond supplier, [status: CREATED, view:"show"]
     }
 
     @Transactional
-    def update(Company company) {
-        if (company == null) {
+    def update(Supplier supplier) {
+        if (supplier == null) {
             render status: NOT_FOUND
             return
         }
-        if (company.hasErrors()) {
+        if (supplier.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond company.errors
+            respond supplier.errors
             return
         }
 
         try {
-            companyService.save(company)
+            supplierService.save(supplier)
         } catch (ValidationException e) {
-            respond company.errors
+            respond supplier.errors
             return
         }
 
-        respond company, [status: OK, view:"show"]
+        respond supplier, [status: OK, view:"show"]
     }
 
     @Transactional
@@ -89,7 +78,7 @@ class CompanyController {
             return
         }
 
-        companyService.delete(id)
+        supplierService.delete(id)
 
         render status: NO_CONTENT
     }

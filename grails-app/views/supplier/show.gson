@@ -1,0 +1,7 @@
+import company.Supplier
+
+model {
+	Supplier supplier
+}
+
+json tmpl.supplier(supplier)

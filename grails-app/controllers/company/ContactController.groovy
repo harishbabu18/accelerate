@@ -1,5 +1,6 @@
 package company
 
+import grails.plugin.awssdk.s3.AmazonS3Service
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.CREATED
 import static org.springframework.http.HttpStatus.NOT_FOUND
@@ -14,6 +15,8 @@ import grails.gorm.transactions.Transactional
 class ContactController {
 
     ContactService contactService
+    AmazonS3Service amazonS3Service
+
 
     static responseFormats = ['json', 'xml']
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -40,6 +43,11 @@ class ContactController {
         }
 
         try {
+            if(params.featuredImageFile!=null) {
+                String path = "contact/" + params.email + params.featuredImageFile.originalFilename
+                amazonS3Service.storeMultipartFile(path, params.featuredImageFile)
+                contact.avatar = path
+            }
             contactService.save(contact)
         } catch (ValidationException e) {
             respond contact.errors

@@ -1,5 +1,6 @@
 package company
 
+import grails.plugin.awssdk.s3.AmazonS3Service
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.CREATED
 import static org.springframework.http.HttpStatus.NOT_FOUND
@@ -14,6 +15,8 @@ import grails.gorm.transactions.Transactional
 class EmployeeController {
 
     EmployeeService employeeService
+    AmazonS3Service amazonS3Service
+
 
     static responseFormats = ['json', 'xml']
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -40,6 +43,13 @@ class EmployeeController {
         }
 
         try {
+
+            if(params.featuredImageFile!=null) {
+                String path = "employee/" + params.email + params.featuredImageFile.originalFilename
+                amazonS3Service.storeMultipartFile(path, params.featuredImageFile)
+                employee.avatar = path
+            }
+
             employeeService.save(employee)
         } catch (ValidationException e) {
             respond employee.errors
@@ -62,6 +72,13 @@ class EmployeeController {
         }
 
         try {
+
+            if(params.featuredImageFile!=null) {
+                String path = "employee/" + params.email + params.featuredImageFile.originalFilename
+                amazonS3Service.storeMultipartFile(path, params.featuredImageFile)
+                employee.avatar = path
+            }
+
             employeeService.save(employee)
         } catch (ValidationException e) {
             respond employee.errors

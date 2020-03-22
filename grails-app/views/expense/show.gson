@@ -1,0 +1,7 @@
+import expense.Expense
+
+model {
+	Expense expense
+}
+
+json tmpl.expense(expense)

@@ -4,11 +4,11 @@ import usermanagement.User
 
 class Employee {
 
-
     String avatar
     String firstName
     String lastName
     String email
+    String mobile
     Date dob
     User user
     Date joiningdate
@@ -22,5 +22,5 @@ class Employee {
         lastName matches: "[a-zA-Z ]+"
         email unique:true,email: true
         relievingdate nullable:true, blank:true
-    }
+}
 }

@@ -1,0 +1,10 @@
+import company.Contact
+
+model {
+	Iterable<Contact> contactList
+
+}
+
+json {
+  contact tmpl.contact(contactList ?: [])
+}

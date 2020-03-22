@@ -1,0 +1,7 @@
+import expense.Salary
+
+model {
+	Salary salary
+}
+
+json tmpl.salary(salary)

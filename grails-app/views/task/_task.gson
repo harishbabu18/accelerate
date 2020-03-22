@@ -1,0 +1,7 @@
+import ticket.Task
+
+model {
+	Task task
+}
+
+json g.render(task, [resolveTemplate: false])

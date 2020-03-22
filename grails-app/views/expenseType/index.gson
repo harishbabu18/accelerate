@@ -1,0 +1,8 @@
+import expense.ExpenseType
+
+model {
+	Iterable<ExpenseType> expenseTypeList
+}
+
+json tmpl.expenseType(expenseTypeList ?: [])
+

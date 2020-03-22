@@ -1,9 +1,9 @@
-package username
+package company
 
 import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
-class UserByUsernameControllerSpec extends Specification implements ControllerUnitTest<UserByUsernameController> {
+class ContactSearchControllerSpec extends Specification implements ControllerUnitTest<ContactSearchController> {
 
     def setup() {
     }

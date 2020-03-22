@@ -1,0 +1,7 @@
+import inventory.QuantityType
+
+model {
+	QuantityType quantityType
+}
+
+json tmpl.quantityType(quantityType)

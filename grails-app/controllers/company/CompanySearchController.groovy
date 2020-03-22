@@ -8,21 +8,16 @@ class CompanySearchController {
     static responseFormats = ['json', 'xml']
 
     def index() {
+
         def c = Company.createCriteria()
         def results = c.list {
 
-            like("name", "%"+params.name+"%")
-
-            and {
-                if(params.startingfrom !=null){
-                between("dateCreated", params.startingfrom,params.endingto)
-                }
-                if(params.startingfrom !=null) {
-                    eq("country", params.country)
-                }
-                if(params.startingfrom !=null) {
-                        eq("state", param.country)
-                }
+            if(params.searchColumn == 'name'){
+                like("name", "%" + params.search + "%")
+            } else if(params.searchColumn  == 'email'){
+                like("email", "%" + params.search + "%")
+            } else {
+                like("mobile", "%" + params.search + "%")
             }
 
         }

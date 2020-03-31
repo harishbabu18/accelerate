@@ -78,18 +78,7 @@ grails:
         upload:
             maxFileSize: 26214400
             maxRequestSize: 26214400
----
-grails:
-    plugin:
-        awssdk:
-            accessKey:
-            secretKey:
-            region: ap-south-1
-            s3:
-                accessKey:
-                secretKey:
-                region:
-                bucket:
+
 ---
 grails:
     cors:

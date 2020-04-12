@@ -1,8 +1,10 @@
 package company
 
+import grails.gorm.MultiTenant
 import usermanagement.User
 
-class Contact {
+class Contact implements MultiTenant<Contact> {
+    String organisation
     String avatar
     Company company
     String firstName
@@ -28,5 +30,9 @@ class Contact {
         note nullable:true,blank:true
         addresslinetwo nullable: true, blank: true
         email unique:true,email: true
+    }
+
+    static mapping = {
+        tenantId name: 'organisation'
     }
 }

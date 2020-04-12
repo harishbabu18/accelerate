@@ -1,8 +1,10 @@
 package company
 
+import grails.gorm.MultiTenant
 import usermanagement.User
 
-class Company {
+class Company implements MultiTenant<Company> {
+    String organisation
     String avatar
     String name
     String description
@@ -23,6 +25,7 @@ class Company {
     Date lastUpdated
 
     static constraints = {
+
         avatar nullable:true, blank:true
         name unique:true
         description nullable: true, blank: true
@@ -32,5 +35,9 @@ class Company {
         email unique:true,email: true
         website unique:true,nullable: true, blank: true
 
+    }
+
+    static mapping = {
+        tenantId name: 'organisation'
     }
 }

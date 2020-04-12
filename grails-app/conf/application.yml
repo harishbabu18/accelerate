@@ -83,6 +83,14 @@ grails:
 grails:
     cors:
         enabled: true
+
+---
+grails:
+    gorm:
+        multiTenancy:
+            mode: DISCRIMINATOR
+            tenantResolverClass: usermanagement.CustomTenentResolver
+
 ---
 hibernate:
     cache:
@@ -108,7 +116,7 @@ environments:
     production:
         dataSource:
             dbCreate: none
-            url: jdbc:mysql://teraret-beta-instance.ct1gqorilgvy.ap-south-1.rds.amazonaws.com:3306/teraret-beta
+            url: jdbc:mysql://teraret-beta-instance.ct1gqorilgvy.ap-south-1.rds.amazonaws.com:3306/teraret-prod
             properties:
                 jmxEnabled: true
                 initialSize: 5

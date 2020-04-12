@@ -1,9 +1,10 @@
 package company
 
+import grails.gorm.MultiTenant
 import usermanagement.User
 
-class Employee {
-
+class Employee  implements MultiTenant<Employee> {
+    String organisation
     String avatar
     String firstName
     String lastName
@@ -23,4 +24,8 @@ class Employee {
         email unique:true,email: true
         relievingdate nullable:true, blank:true
 }
+
+    static mapping = {
+        tenantId name: 'organisation'
+    }
 }

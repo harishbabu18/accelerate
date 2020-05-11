@@ -1,10 +1,8 @@
 package company
 
-import grails.gorm.MultiTenant
 import usermanagement.User
 
-class Company implements MultiTenant<Company> {
-    String organisation
+class Company {
     String avatar
     String name
     String description
@@ -37,7 +35,5 @@ class Company implements MultiTenant<Company> {
 
     }
 
-    static mapping = {
-        tenantId name: 'organisation'
-    }
+
 }

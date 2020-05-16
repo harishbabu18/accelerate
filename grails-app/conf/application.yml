@@ -78,18 +78,7 @@ grails:
         upload:
             maxFileSize: 26214400
             maxRequestSize: 26214400
----
-grails:
-    plugin:
-        awssdk:
-            accessKey:
-            secretKey:
-            region: ap-south-1
-            s3:
-                accessKey:
-                secretKey:
-                region:
-                bucket:
+
 ---
 grails:
     cors:
@@ -111,15 +100,15 @@ environments:
     development:
         dataSource:
             dbCreate: update
-            url: jdbc:mysql://teraret-beta-instance.ct1gqorilgvy.ap-south-1.rds.amazonaws.com:3306/teraret-beta
+            url: jdbc:mysql://teraret-beta-instance.ct1gqorilgvy.ap-south-1.rds.amazonaws.com:3306/qualifica
     test:
         dataSource:
             dbCreate: update
-            url: jdbc:mysql://teraret-beta-instance.ct1gqorilgvy.ap-south-1.rds.amazonaws.com:3306/teraret-beta
+            url: jdbc:mysql://teraret-beta-instance.ct1gqorilgvy.ap-south-1.rds.amazonaws.com:3306/qualifica
     production:
         dataSource:
             dbCreate: none
-            url: jdbc:mysql://teraret-beta-instance.ct1gqorilgvy.ap-south-1.rds.amazonaws.com:3306/teraret-beta
+            url: jdbc:mysql://teraret-beta-instance.ct1gqorilgvy.ap-south-1.rds.amazonaws.com:3306/qualificaprod
             properties:
                 jmxEnabled: true
                 initialSize: 5

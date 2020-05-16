@@ -22,7 +22,11 @@ class CompanyController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond companyService.list(params), model:[companyCount: companyService.count()]
+        def count = companyService.count()
+        def offset = params.offset as Long
+        Long currentpage = Math.ceil((params.max+offset)/params.max)
+        Long pagecount = Math.ceil(count/params.max)
+        respond companyService.list(params), model:[companyCount: count,companyPage:currentpage,companyPageCount:pagecount]
     }
 
     def show(Long id) {
@@ -46,11 +50,11 @@ class CompanyController {
         }
 
         try {
-            if(params.featuredImageFile!=null){
-            String path = "company/"+params.email+params.featuredImageFile.originalFilename
-            amazonS3Service.storeMultipartFile(path,params.featuredImageFile)
-            company.avatar =path
-            }
+//            if(params.featuredImageFile!=null){
+//            String path = "company/"+params.email+params.featuredImageFile.originalFilename
+//            amazonS3Service.storeMultipartFile(path,params.featuredImageFile)
+//            company.avatar =path
+//            }
             companyService.save(company)
         } catch (ValidationException e) {
             respond company.errors

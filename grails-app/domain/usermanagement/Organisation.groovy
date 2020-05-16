@@ -1,10 +1,8 @@
-package sales
+package usermanagement
 
-class OfferType {
+class Organisation {
 
     String name
-    Date dateCreated
-    Date lastUpdated
 
     static constraints = {
         name unique:true

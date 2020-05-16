@@ -3,6 +3,7 @@ package company
 import usermanagement.User
 
 class Contact {
+
     String avatar
     Company company
     String firstName
@@ -29,4 +30,6 @@ class Contact {
         addresslinetwo nullable: true, blank: true
         email unique:true,email: true
     }
+
+
 }

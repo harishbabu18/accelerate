@@ -23,4 +23,5 @@ class Employee {
         email unique:true,email: true
         relievingdate nullable:true, blank:true
 }
+
 }

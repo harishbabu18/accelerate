@@ -50,11 +50,11 @@ class CompanyController {
         }
 
         try {
-            if(params.featuredImageFile!=null){
-            String path = "company/"+params.email+params.featuredImageFile.originalFilename
-            amazonS3Service.storeMultipartFile(path,params.featuredImageFile)
-            company.avatar =path
-            }
+//            if(params.featuredImageFile!=null){
+//            String path = "company/"+params.email+params.featuredImageFile.originalFilename
+//            amazonS3Service.storeMultipartFile(path,params.featuredImageFile)
+//            company.avatar =path
+//            }
             companyService.save(company)
         } catch (ValidationException e) {
             respond company.errors

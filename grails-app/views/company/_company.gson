@@ -20,7 +20,8 @@ json {
   country company.country
   state company.state
   zip company.zip
-  user company.user.username
+  createdBy company.createdBy.username
+  lastUpdatedBy company.lastUpdatedBy.username
   dateCreated company.dateCreated
   lastUpdated company.lastUpdated
 }

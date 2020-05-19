@@ -20,10 +20,8 @@ class Company {
     String state
     String city
     String zip
-
     Date dateCreated
     Date lastUpdated
-
     User createdBy
     User lastUpdatedBy
 

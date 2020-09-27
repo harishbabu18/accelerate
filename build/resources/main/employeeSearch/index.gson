@@ -1,0 +1,10 @@
+import company.Employee
+
+model {
+	Iterable<Employee> employeeList
+}
+
+
+json {
+  employee tmpl.employee(employeeList ?: [])
+}

@@ -1,0 +1,11 @@
+import inventory.EquipmentType
+
+model {
+	Iterable<EquipmentType> equipmentTypeList
+	Long equipmentTypeCount
+}
+
+json {
+equipmentType tmpl.equipmentType(equipmentTypeList ?: [])
+count equipmentTypeCount
+}

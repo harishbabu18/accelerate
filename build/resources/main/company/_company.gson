@@ -1,0 +1,27 @@
+import company.Company
+
+model {
+	Company company
+}
+
+json {
+  id company.id
+  avatar company.avatar
+  name company.name
+  description company.description
+  establishedDate company.establishedDate
+  email company.email
+  mobile company.mobile
+  fax company.fax
+  website company.website
+  officeType company.officeType.name
+  addresslineone company.addresslineone
+  addresslinetwo company.addresslinetwo
+  country company.country
+  state company.state
+  zip company.zip
+  createdBy company.createdBy.username
+  lastUpdatedBy company.lastUpdatedBy.username
+  dateCreated company.dateCreated
+  lastUpdated company.lastUpdated
+}

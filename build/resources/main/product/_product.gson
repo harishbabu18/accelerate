@@ -1,0 +1,23 @@
+import inventory.Product
+
+model {
+	Product product
+}
+
+
+
+
+
+json {
+ id product.id
+  name product.name.name
+   barcode product.barcode
+  quantityType product.quantityType.name
+   number product.number
+   quantity product.quantity
+   price product.price
+  lot product.lot.lotname
+  createdBy product.createBy.username
+   dateCreated product.dateCreated
+   lastUpdated product.lastUpdated
+}

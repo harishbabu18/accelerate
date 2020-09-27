@@ -1,0 +1,17 @@
+import inventory.Product
+
+model {
+	Iterable<Product> productList
+	Long productCount
+}
+
+
+
+
+json {
+
+product tmpl.product(productList ?: [])
+count productCount
+
+}
+

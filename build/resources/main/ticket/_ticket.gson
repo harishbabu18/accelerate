@@ -1,0 +1,23 @@
+import ticket.Ticket
+
+model {
+	Ticket ticket
+}
+
+
+json{
+id ticket.id
+
+ description ticket.description
+     urgent ticket.urgent
+     important ticket.important
+     ticketSource ticket.ticketSource.name
+     ticketStatus ticket.ticketStatus.name
+     createdBy ticket.createdBy.username
+     assignedTo ticket.assignedTo.username
+     company ticket.company.name
+     contact ticket.contact.firstName
+     dateCreated ticket.dateCreated
+     lastUpdated ticket.lastUpdated
+
+}

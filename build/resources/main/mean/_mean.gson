@@ -1,0 +1,17 @@
+import inventory.Mean
+
+model {
+	Mean mean
+}
+
+
+
+json{
+id mean.id
+loading mean.loading.addresslineone
+unloading mean.unloading.addresslineone
+schedule mean.schedule
+createdBy mean.user.username
+dateCreated mean.dateCreated
+lastUpdated mean.lastUpdated
+}

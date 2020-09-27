@@ -1,0 +1,16 @@
+import inventory.Mean
+
+model {
+	Iterable<Mean> meanList
+	Long meanCount
+}
+
+
+
+
+json {
+
+mean tmpl.mean(meanList ?: [])
+count meanCount
+}
+

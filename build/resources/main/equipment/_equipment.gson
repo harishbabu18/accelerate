@@ -1,0 +1,23 @@
+import inventory.Equipment
+
+model {
+	Equipment equipment
+}
+
+
+json{
+ id equipment.id
+ name equipment.name
+ description equipment.description
+ serialNumber equipment.serialNumber
+ equipmentType equipment.equipmentType.name
+ threshold equipment.threshold
+ supplier equipment.supplier
+ salesprice equipment.salesprice
+ purchaseprice equipment.purchaseprice
+ deadline equipment.deadline
+ user equipment.user.username
+ dateCreated equipment.dateCreated
+ lastUpdated equipment.lastUpdated
+
+}

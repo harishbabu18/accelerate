@@ -1,0 +1,7 @@
+import company.PaymentMethod
+
+model {
+	PaymentMethod paymentMethod
+}
+
+json g.render(paymentMethod, [resolveTemplate: false])

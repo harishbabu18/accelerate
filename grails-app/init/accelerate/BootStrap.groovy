@@ -18,9 +18,14 @@ class BootStrap {
     def init = { servletContext ->
 
         Organisation teraret = new Organisation(name: "Teraret Managed Cloud Private Limited").save()
-        Organisation qualifica = new Organisation(name: "Qualifica Group").save()
+        Organisation qualifica = new Organisation(name: "Software and Design Consultancy").save()
+        Organisation hardwareandembedded = new Organisation(name: "Hardware and Embedded Consultancy").save()
+        Organisation clinity = new Organisation(name: "Clinity org").save()
+        Organisation bessppl = new Organisation(name: "Bessppl").save()
 
-        User admin = new User(organisation: teraret,username: "babuamuda@gmail.com",password:"B@vana20").save()
+
+        User admin = new User(organisation: teraret,username: "harish.babu@teraret.com",password:"B@vana20").save()
+
         User qualificaadmin = new User(organisation: qualifica,username: "audit@qualificagroup.it",password:"test@123").save()
 
         User customer = new User(organisation: teraret,username: "liricsdash2014@gmail.com",password:"lirics@123").save()
@@ -35,6 +40,7 @@ class BootStrap {
         UserRole.create(qualificaadmin,companyrole)
         UserRole.create(customer,customerrole)
         UserRole.create(account,accountrole)
+
         new Position(name: "Employee").save()
         new Position(name: "Freelancer").save()
         new OfficeType(name:"REGISTERED OFFICE").save()
@@ -60,13 +66,13 @@ class BootStrap {
         new TicketStatusType(name: "Pending customer").save()
         new TicketStatusType(name: "Awaiting Third").save()
         new TicketStatusType(name: "Closed").save()
-        new TicketStatusType(name: "0 ‐ Potential").save()
-        new TicketStatusType(name: "01 ‐ Contact Established").save()
-        new TicketStatusType(name: "01 ‐ Int. But Wait EXP").save()
-        new TicketStatusType(name: "1 ‐ Hold Ns Activities").save()
-        new TicketStatusType(name: "1 ‐ certifies Third Activity").save()
-        new TicketStatusType(name: "1 ‐ Customer Waiting").save()
-        new TicketStatusType(name: "1 * ‐ Negotiation Hot").save()
+        new TicketStatusType(name: "Potential").save()
+        new TicketStatusType(name: "Contact Established").save()
+        new TicketStatusType(name: "Int. But Wait EXP").save()
+        new TicketStatusType(name: "Hold Ns Activities").save()
+        new TicketStatusType(name: "certifies Third Activity").save()
+        new TicketStatusType(name: "Customer Waiting").save()
+        new TicketStatusType(name: "Negotiation Hot").save()
         new TicketStatusType(name: "Potential").save()
         new TicketStatusType(name: "Interested").save()
         new TicketStatusType(name: "won").save()

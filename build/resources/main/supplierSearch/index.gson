@@ -1,0 +1,10 @@
+import company.Supplier
+
+model {
+	Iterable<Supplier> supplierList
+}
+
+json {
+supplier tmpl.supplier(supplierList ?: [])
+}
+

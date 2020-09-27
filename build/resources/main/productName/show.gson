@@ -1,0 +1,7 @@
+import inventory.ProductName
+
+model {
+	ProductName productName
+}
+
+json tmpl.productName(productName)

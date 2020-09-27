@@ -1,0 +1,20 @@
+import company.Employee
+
+model {
+	Employee employee
+}
+
+json {
+  id employee.id
+  avatar employee.avatar
+  firstName employee.firstName
+  lastName  employee.lastName
+  email employee.email
+  mobile employee.mobile
+  dob employee.dob
+  joiningdate employee.joiningdate
+  relievingdate employee.relievingdate
+  user employee.user.username
+  dateCreated employee.dateCreated
+  lastUpdated employee.lastUpdated
+}

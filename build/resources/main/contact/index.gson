@@ -1,0 +1,11 @@
+import company.Contact
+
+model {
+	Iterable<Contact> contactList
+  Long contactCount
+}
+
+json {
+  contact tmpl.contact(contactList ?: [])
+  count contactCount
+}

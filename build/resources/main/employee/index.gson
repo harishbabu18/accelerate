@@ -1,0 +1,12 @@
+import company.Employee
+
+model {
+	Iterable<Employee> employeeList
+  Long employeeCount
+}
+
+
+json {
+  employee tmpl.employee(employeeList ?: [])
+  count employeeCount
+}

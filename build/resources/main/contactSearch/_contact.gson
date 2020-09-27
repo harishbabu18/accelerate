@@ -1,0 +1,25 @@
+import company.Contact
+
+model {
+	Contact contact
+}
+
+json {
+  id contact.id
+  avatar contact.avatar
+  company contact.company.name
+  firstName contact.firstName
+  lastName  contact.lastName
+  position contact.position.name
+  dob contact.dob
+  mobile contact.mobile
+  email contact.email
+  addresslineone contact.addresslineone
+  addresslinetwo contact.addresslinetwo
+  country contact.country
+  state contact.state
+  zip contact.zip
+  user contact.user.username
+  dateCreated contact.dateCreated
+  lastUpdated contact.lastUpdated
+}

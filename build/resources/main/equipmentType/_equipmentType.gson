@@ -1,0 +1,10 @@
+import inventory.EquipmentType
+
+model {
+	EquipmentType equipmentType
+}
+
+json{
+name equipmentType.name
+
+}

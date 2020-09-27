@@ -1,7 +1,0 @@
-import company.Company
-
-model {
-	Company company
-}
-
-json tmpl.company(company)

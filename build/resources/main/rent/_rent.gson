@@ -1,7 +1,0 @@
-import expense.Rent
-
-model {
-	Rent rent
-}
-
-json g.render(rent, [resolveTemplate: false])

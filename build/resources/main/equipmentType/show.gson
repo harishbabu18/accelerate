@@ -1,7 +1,0 @@
-import inventory.EquipmentType
-
-model {
-	EquipmentType equipmentType
-}
-
-json tmpl.equipmentType(equipmentType)

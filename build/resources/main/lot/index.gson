@@ -1,8 +1,0 @@
-import inventory.Lot
-
-model {
-	Iterable<Lot> lotList
-}
-
-json tmpl.lot(lotList ?: [])
-

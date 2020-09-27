@@ -1,7 +1,0 @@
-import company.Address
-
-model {
-	Address address
-}
-
-json tmpl.address(address)

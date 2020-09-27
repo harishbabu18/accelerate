@@ -1,7 +1,0 @@
-import ticket.TicketSource
-
-model {
-	TicketSource ticketSource
-}
-
-json tmpl.ticketSource(ticketSource)

@@ -1,7 +1,0 @@
-import sales.Offer
-
-model {
-	Offer offer
-}
-
-json tmpl.offer(offer)

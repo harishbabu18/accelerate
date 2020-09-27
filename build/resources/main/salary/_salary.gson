@@ -1,7 +1,0 @@
-import expense.Salary
-
-model {
-	Salary salary
-}
-
-json g.render(salary, [resolveTemplate: false])

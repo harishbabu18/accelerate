@@ -1,8 +1,0 @@
-import inventory.QuantityType
-
-model {
-	Iterable<QuantityType> quantityTypeList
-}
-
-json tmpl.quantityType(quantityTypeList ?: [])
-

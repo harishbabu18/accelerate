@@ -1,7 +1,0 @@
-import inventory.Product
-
-model {
-	Product product
-}
-
-json tmpl.product(product)

@@ -1,8 +1,0 @@
-import company.Supplierstatus
-
-model {
-	Supplierstatus supplierstatus
-}
-
-json g.render(supplierstatus, [resolveTemplate: false])
-

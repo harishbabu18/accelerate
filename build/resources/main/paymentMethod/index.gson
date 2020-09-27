@@ -1,8 +1,0 @@
-import company.PaymentMethod
-
-model {
-	Iterable<PaymentMethod> paymentMethodList
-}
-
-json tmpl.paymentMethod(paymentMethodList ?: [])
-

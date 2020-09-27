@@ -1,7 +1,0 @@
-import inventory.Mean
-
-model {
-	Mean mean
-}
-
-json tmpl.mean(mean)

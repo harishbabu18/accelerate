@@ -1,8 +1,0 @@
-import inventory.ProductName
-
-model {
-	Iterable<ProductName> productNameList
-}
-
-json tmpl.productName(productNameList ?: [])
-

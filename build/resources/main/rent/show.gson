@@ -1,7 +1,0 @@
-import expense.Rent
-
-model {
-	Rent rent
-}
-
-json tmpl.rent(rent)

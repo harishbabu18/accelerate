@@ -1,7 +1,0 @@
-import inventory.Lot
-
-model {
-	Lot lot
-}
-
-json g.render(lot, [resolveTemplate: false])

@@ -1,7 +1,0 @@
-import expense.ExpenseType
-
-model {
-	ExpenseType expenseType
-}
-
-json g.render(expenseType, [resolveTemplate: false])
